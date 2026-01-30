@@ -1,0 +1,12 @@
+from PIL import Image, ImageEnhance
+image = Image.open("car.jpg")
+brightness = ImageEnhance.Brightness(image)
+image = brightness.enhance(1.3)
+contrast = ImageEnhance.Contrast(image)
+image = contrast.enhance(1.4)
+sharpness = ImageEnhance.Sharpness(image)
+image = sharpness.enhance(1.8)
+color = ImageEnhance.Color(image)
+image = color.enhance(1.2)
+image.save("styled_output.png")
+print("Image styling completed and saved as styled_output.png")
